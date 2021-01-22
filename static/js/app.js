@@ -79,11 +79,13 @@ function initial_look(){
         //Bubble chart: We assign variables to x axis (otu_ids) and the y values (sample_values)
            var x_axis_color_bubble = chosen_data_set_v1.otu_ids;
            var y_axis_marker_bubble = chosen_data_set_v1.sample_values;
+           var otu_labels_bubble = chosen_data_set_v1.otu_labels;
         
         //Bubble chart: Trace, data & layout 
            var trace2 = {
             x: x_axis_color_bubble,
             y: y_axis_marker_bubble,
+            text: otu_labels_bubble,
             mode: 'markers',
             marker: {color:x_axis_color_bubble, size:y_axis_marker_bubble}
            };
@@ -169,6 +171,7 @@ function initial_look(){
     //Bubble chart: We assign variables to x axis (otu_ids) and the y values (sample_values)
     var x_axis_color_bubble = chosen_data_set_v1.otu_ids;
     var y_axis_marker_bubble = chosen_data_set_v1.sample_values;
+    var otu_labels_bubble = chosen_data_set_v1.otu_labels;
     var new_marker_bubble = {color:x_axis_color_bubble, size:y_axis_marker_bubble}
 
     //Bubble chart: We restyle the necessary items:
@@ -176,6 +179,7 @@ function initial_look(){
         Plotly.restyle("bubble","x",[x_axis_color_bubble])
         Plotly.restyle("bubble","y",[y_axis_marker_bubble])
         Plotly.restyle("bubble","marker",[new_marker_bubble])
+        Plotly.restyle("bar","text",[otu_labels_bubble])
     
     
             //Table: We find the index of the user ID chosen. We need this index to gather information from data.metadata
